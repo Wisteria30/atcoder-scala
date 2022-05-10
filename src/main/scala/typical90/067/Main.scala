@@ -1,23 +1,11 @@
-import java.io.{BufferedReader, InputStream, InputStreamReader, PrintWriter}
-import java.util.{Scanner, StringTokenizer}
+import java.io.PrintWriter
+import java.util.Scanner
 
-class InputReader(stream: InputStream) {
-  private val reader = new BufferedReader(new InputStreamReader(stream))
-  private var tokenizer: StringTokenizer = new StringTokenizer(reader.readLine())
-
-  def next(): String = {
-    while (!tokenizer.hasMoreTokens) {
-      tokenizer = new StringTokenizer(reader.readLine())
-    }
-    tokenizer.nextToken()
-  }
-}
 
 object Main extends App {
   val sc: Scanner = new Scanner(System.in)
-  val in = new InputReader(System.in)
   val pw = new PrintWriter(System.out)
-  val n, k = in.next()
+  val n, k = sc.next()
   var ans = n
   for (_ <- 1 to k.toInt) {
     ans = convertBase8to9(ans)
