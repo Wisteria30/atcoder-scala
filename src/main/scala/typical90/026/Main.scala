@@ -32,7 +32,7 @@ object Main extends App {
   val zeros = twoColors.zipWithIndex.filter(_._1 == 0).map(_._2 + 1)
   val ones = twoColors.zipWithIndex.filter(_._1 == 1).map(_._2 + 1)
 
-  if (zeros.size >= ones.size) {
+  if (zeros.length >= ones.length) {
     println(zeros.slice(0, N / 2).mkString(" "))
   } else {
     println(ones.slice(0, N / 2).mkString(" "))
